@@ -31,11 +31,7 @@ class WhoamiController(object):
 
     def get_user_details(self, request, **kw):
         """Returns a JSON blob of account details for the current user."""
-        # We have to load 'syncNode' with a second query.
-        # There's logic to load it at auth time, but only if you're checking
-        # that the user is actually on that node.  Which they're not.
-        self.auth.get_user_info(request.user, ['syncNode'])
         return json_response({
             'userid': request.user['userid'],
-            'syncNode': request.user.get('syncNode'),
+            'syncNode': request.user['syncNode'],
         })
