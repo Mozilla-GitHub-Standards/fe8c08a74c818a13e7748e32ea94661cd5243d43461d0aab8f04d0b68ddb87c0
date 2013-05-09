@@ -2,7 +2,7 @@
 %define pythonname SyncWhoami
 %define version 1.0
 %define unmangled_version %{version}
-%define release 1
+%define release 2
 
 Summary: Sync User Account Details Server
 Name: %{name}
